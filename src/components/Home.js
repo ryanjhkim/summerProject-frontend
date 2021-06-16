@@ -1,9 +1,11 @@
 import { Button } from "antd"
+import GlobalNavigationBar from "./GlobalNavigationBar";
 
 const Home = () => {
     return (
         <div>
-            Hello world! test123
+            <GlobalNavigationBar />
+            Hello world!
         </div>
     )
 }
