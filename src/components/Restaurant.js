@@ -1,10 +1,9 @@
+import { useState } from 'react'
+import { ShoppingCartOutlined, StarFilled } from '@ant-design/icons'
+import { Row, Col, Drawer, Badge, Affix, PageHeader } from 'antd';
 import Cart from './Cart'
 import CategoryContainer from './CategoryContainer'
 import CatNavBar from './CatNavBar'
-import { useState } from 'react'
-import { ShoppingCartOutlined, StarFilled } from '@ant-design/icons'
-import { Row, Col, Drawer, Badge, Affix } from 'antd';
-import { PageHeader } from 'antd';
 import data from './data.json'
 import '../css/Restaurant.css'
 
@@ -12,20 +11,36 @@ import '../css/Restaurant.css'
 const Restaurant = () => {
     const [items, setItems] = useState([])
     const [cartVisible, setCartVisible] = useState(false)
+    const [restaurantInfo, setRestaurantInfo] = useState({})
     const showCart = () => setCartVisible(true)
     const onClose = () => setCartVisible(false)
 
     const addItem = (item) => {
-        console.log(item)
-        const exist = items.find(i => i.id === item.id)
-        if (exist) {
-            setItems(items.map(i => i.id === item.id ? {...exist, qty: exist.qty + item.qty } : i))
+        if (item.restaurantID !== restaurantInfo.id) {
+            setItems([item])
+            setRestaurantInfo({
+                id: item.restaurantID,
+                name: item.restaurantName,
+                address: item.restaurantAddress,
+                city: item.restaurantCity
+            })
         } else {
-            setItems([...items, item])
+            console.log(item)
+            const exist = items.find(i => i.id === item.id)
+            if (exist) {
+                setItems(items.map(i => i.id === item.id ? {...exist, qty: exist.qty + item.qty } : i))
+            } else {
+                setItems([...items, item])
+            }
         }
     }
 
-    const removeItem = (item) => setItems((items.filter(i => i.id !== item.id)))
+    const removeItem = (item) => {
+        setItems((items.filter(i => i.id !== item.id)))
+        if (items.length === 0) {
+            setRestaurantInfo({})
+        }
+    }
 
     const editItem = (item, qty) => {
         console.log(qty)
@@ -73,7 +88,7 @@ const Restaurant = () => {
             </Row>
             <Row>
                 <Col span={14} offset={4}>
-                    <CategoryContainer menu={data.menu} addItem={addItem}></CategoryContainer>
+                    <CategoryContainer menu={data.menu} restaurantInfo={{id: data.restaurantID, name: data.restaurant, address: data.address, city: data.city}} addItem={addItem}></CategoryContainer>
                 </Col>
                 <Col>
                 <Drawer
@@ -85,10 +100,10 @@ const Restaurant = () => {
                         {items.length > 0 && 
                             <div>
                                 <div style={{marginTop: '3px'}}>
-                                    {data.restaurant}
+                                    {restaurantInfo.name}
                                 </div>
                                 <div style={{fontSize: '12px'}}>
-                                    {data.address} {data.city}
+                                    {restaurantInfo.address} {restaurantInfo.city}
                                 </div>  
                             </div> 
                         }

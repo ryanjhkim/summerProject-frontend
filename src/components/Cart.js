@@ -1,5 +1,4 @@
-import { Modal, InputNumber } from 'antd'
-import { Button, Divider } from 'antd'
+import { Button, Divider, Modal, InputNumber } from 'antd'
 import { useState } from 'react'
 import '../css/Cart.css'
 
@@ -31,7 +30,7 @@ const Cart = ({items, editItem, removeItem}) => {
 
     const totalPrice = items.reduce((a, b) => a + b.price * b.qty, 0)
     const itemList = items.map((item, index) => 
-        <div className="cart-entry">
+        <div className="cart-entry" key={index}>
             <div className="cart-menu" key={item.id}>
                 {item.qty}x {item.name} ${(item.price * item.qty).toFixed(2)}
             </div>

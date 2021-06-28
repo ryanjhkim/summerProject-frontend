@@ -1,8 +1,8 @@
 {
-    "restaurant": "McDonald's",
-    "restaurantID": 1,
-    "category": "Canadian, Lunch",
-    "address": "234 Ave",
+    "restaurant": "Triple O",
+    "restaurantID": 2,
+    "category": "Burger, Lunch",
+    "address": "123 UBC",
     "city": "Vancouver",
     "postalCode": "V2T 6Y3",
     "distance": 0.7,

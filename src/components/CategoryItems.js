@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { Card, Modal, InputNumber } from 'antd'
-import { Row, Col } from 'antd'
+import { Row, Col, Card, Modal, InputNumber } from 'antd'
 import '../css/Category.css'
 
-const CategoryItems = ({ menus, addItem }) => {
+const CategoryItems = ({ menus, restaurantInfo, addItem }) => {
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [item, setItem] = useState([])
     const [qty, setQty] = useState(1)
@@ -17,6 +16,10 @@ const CategoryItems = ({ menus, addItem }) => {
     const handleOk = () => {
         setIsModalVisible(false)
         item.qty = qty
+        item.restaurantID = restaurantInfo.id
+        item.restaurantName = restaurantInfo.name
+        item.restaurantAddress = restaurantInfo.address
+        item.restaurantCity = restaurantInfo.city
         console.log(item)
         addItem(item)
         setItem([])
@@ -30,8 +33,8 @@ const CategoryItems = ({ menus, addItem }) => {
     }
 
     const menuList = menus.map(item => 
-        <Col className="menu-card" span={11}>
-            <Card title={item.name} onClick={() => showModal(item)} hoverable={true}>
+        <Col className="menu-card" span={11} key={item.id}>
+            <Card title={item.name} key={item.id} onClick={() => showModal(item)} hoverable={true}>
                 <p>
                     Description
                 </p>
