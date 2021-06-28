@@ -82,12 +82,16 @@ const Restaurant = () => {
                         <div>
                             Your Order
                         </div>
-                        <div style={{marginTop: '3px'}}>
-                            {data.restaurant}
-                        </div>
-                        <div style={{fontSize: '12px'}}>
-                            {data.address} {data.city}
-                        </div>
+                        {items.length > 0 && 
+                            <div>
+                                <div style={{marginTop: '3px'}}>
+                                    {data.restaurant}
+                                </div>
+                                <div style={{fontSize: '12px'}}>
+                                    {data.address} {data.city}
+                                </div>  
+                            </div> 
+                        }
                     </div>
                     }
                     placement="right"
