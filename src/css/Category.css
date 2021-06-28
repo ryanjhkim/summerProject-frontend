@@ -1,0 +1,13 @@
+.category-name {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.menu-card {
+    padding-top: 10px;
+}
+
+.active {
+    font-weight: bold;
+}

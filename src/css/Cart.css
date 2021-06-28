@@ -1,0 +1,15 @@
+.cart-menu {
+    font-size: 16px;
+}
+
+.cart-options {
+    display: flex;
+}
+
+.divider {
+    margin-top: 5px;
+}
+
+#price {
+   margin-top: 20px 
+}

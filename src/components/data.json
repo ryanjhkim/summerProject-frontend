@@ -1,0 +1,138 @@
+{
+    "restaurant": "McDonald's",
+    "rating": 4.6,
+    "priceRange": "$",
+    "menu": [
+        {
+            "category": "Burger Meals", 
+            "items": [
+                {
+                    "id": 1,
+                    "name": "BigMac",
+                    "price": 9.99
+                },
+                {
+                    "id": 2,
+                    "name": "McChicken",
+                    "price": 8.3
+                },
+                {
+                    "id": 9,
+                    "name": "def",
+                    "price": 9.99
+                },
+                {
+                    "id": 10,
+                    "name": "abc",
+                    "price": 8.3
+                },
+                {
+                    "id": 11,
+                    "name": "zzz",
+                    "price": 2.1
+                }
+
+            ]
+        },
+        {
+            "category": "Breakfast",
+            "items": [
+                {
+                    "id": 3,
+                    "name": "A",
+                    "price": 19.99
+                },
+                {
+                    "id": 4,
+                    "name": "B",
+                    "price": 18.3
+                },
+                {
+                    "id": 13,
+                    "name": "def",
+                    "price": 9.99
+                },
+                {
+                    "id": 14,
+                    "name": "abc",
+                    "price": 8.3
+                },
+                {
+                    "id": 15,
+                    "name": "zzz",
+                    "price": 2.1
+                }
+            ]
+        },
+        {
+            "category": "Drinks",
+            "items": [
+                {
+                    "id": 5,
+                    "name": "Coke",
+                    "price": 2.99
+                },
+                {
+                    "id": 6,
+                    "name": "Sprite",
+                    "price": 3.3
+                },
+                {
+                    "id": 16,
+                    "name": "def",
+                    "price": 9.99
+                },
+                {
+                    "id": 17,
+                    "name": "abc",
+                    "price": 8.3
+                },
+                {
+                    "id": 18,
+                    "name": "zzz",
+                    "price": 2.1
+                },
+                {
+                    "id": 19,
+                    "name": "zazz",
+                    "price": 2.1
+                }
+            ]
+        },
+        {
+            "category": "Side",
+            "items": [
+                {
+                    "id": 7,
+                    "name": "Fries",
+                    "price": 3.99
+                },
+                {
+                    "id": 8,
+                    "name": "AAA",
+                    "price": 3.3
+                },
+                {
+                    "id": 30,
+                    "name": "Fries",
+                    "price": 3.99
+                },
+                {
+                    "id": 31,
+                    "name": "AAA",
+                    "price": 3.3
+                },
+                {
+                    "id": 32,
+                    "name": "Fries",
+                    "price": 3.99
+                },
+                {
+                    "id": 33,
+                    "name": "AAA",
+                    "price": 3.3
+                }
+            ]
+        }
+    ]
+}
