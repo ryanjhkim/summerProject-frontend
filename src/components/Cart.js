@@ -3,7 +3,7 @@ import { Button, Divider } from 'antd'
 import { useState } from 'react'
 import '../css/Cart.css'
 
-const Cart = (props) => {
+const Cart = ({items, editItem, removeItem}) => {
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [item, setItem] = useState([])
     const [count, setCount] = useState(1)
@@ -29,7 +29,6 @@ const Cart = (props) => {
         setCount(value)
     }
 
-    const {restaurant, items, editItem, removeItem} = props;
     const totalPrice = items.reduce((a, b) => a + b.price * b.qty, 0)
     const itemList = items.map((item, index) => 
         <div className="cart-entry">
@@ -54,7 +53,7 @@ const Cart = (props) => {
                 </div>
                 <div>{itemList}</div>
                 {items.length !== 0 && (
-                    <div className="cart-menu" id="price">Total: ${totalPrice.toFixed(2)}</div>
+                    <Button className="cart-menu" type="primary" shape="round" size="large">Checkout ${totalPrice.toFixed(2)}</Button>
                 )}
             </div>
         </div>

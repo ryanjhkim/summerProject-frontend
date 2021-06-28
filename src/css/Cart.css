@@ -1,5 +1,5 @@
 .cart-menu {
-    font-size: 16px;
+    margin-top: 20px;
 }
 
 .cart-options {
@@ -8,8 +8,4 @@
 
 .divider {
     margin-top: 5px;
-}
-
-#price {
-   margin-top: 20px 
 }

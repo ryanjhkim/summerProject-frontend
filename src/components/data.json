@@ -1,5 +1,10 @@
 {
     "restaurant": "McDonald's",
+    "category": "Canadian, Lunch",
+    "address": "234 Ave",
+    "city": "Vancouver",
+    "postalCode": "V2T 6Y3",
+    "distance": 0.7,
     "rating": 4.6,
     "priceRange": "$",
     "menu": [

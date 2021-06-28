@@ -46,112 +46,65 @@ const Restaurant = () => {
         categoryList.push(data.menu[i].category)
     }
 
+    const distance = data.distance > 1 ? (data.distance / 1000).toFixed(1) + 'km' : (data.distance * 1000) + 'm' 
+
     return (
         <>
-        <Affix>
-            <Row className="header">
-                <PageHeader>
-                    <Badge offset={[10]} count = {items.length}>
-                        <ShoppingCartOutlined style={{fontSize: '16px'}} onClick={showCart}/>
-                    </Badge>
-                </PageHeader>
-            
-            </Row>
-        </Affix>
-        <Row>
-            <Col span={12} offset={6}>
-                <div style={{fontSize: '32px', fontWeight: 'bold'}}>
-                    {data.restaurant}
-                </div>
-                <div style={{marginBottom: '20px'}}>
-                    {data.rating} <StarFilled /> {data.priceRange}
-                </div>
+            <Affix>
+                <Row className="header">
+                    <PageHeader>
+                        <Badge offset={[10]} count = {items.length}>
+                            <ShoppingCartOutlined style={{fontSize: '16px'}} onClick={showCart}/>
+                        </Badge>
+                    </PageHeader>
                 
-            </Col>
-        </Row>
-        <Row>
-            <Col span={12} offset={6}>
-                <Affix offsetTop={66}>
-                    <CatNavBar className="catNavBar" categoryList={categoryList}/>
-                </Affix>
-            </Col>
-        </Row>
-        <Row>
-            <Col span={12} offset={6}>
-                <CategoryContainer menu={data.menu} addItem={addItem}></CategoryContainer>
-            </Col>
-            <Col>
-            <Drawer
-                title={
-                <div>
-                    <div>
-                        Your Order
-                    </div>
-                    <div>
+                </Row>
+            </Affix>
+            <Row>
+                <Col span={14} offset={4}>
+                    <div style={{fontSize: '32px', fontWeight: 'bold'}}>
                         {data.restaurant}
                     </div>
-                </div>
-                }
-                placement="right"
-                closable={false}
-                onClose={onClose}
-                visible={cartVisible}
-            >
-                <Cart restaurant={data.restaurant} items={items} editItem={editItem} removeItem={removeItem} />
-            </Drawer>
-            </Col>
-        </Row>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
-        <div>
-            Hello world!
-        </div>
+                    <div style={{marginBottom: '20px'}}>
+                        {data.category} {'\u2022'} {data.rating} <StarFilled /> {'\u2022'} {distance} {'\u2022'} {data.priceRange} 
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col span={14} offset={4}>
+                    <Affix offsetTop={66}>
+                        <CatNavBar className="catNavBar" categoryList={categoryList}/>
+                    </Affix>
+                </Col>
+            </Row>
+            <Row>
+                <Col span={14} offset={4}>
+                    <CategoryContainer menu={data.menu} addItem={addItem}></CategoryContainer>
+                </Col>
+                <Col>
+                <Drawer
+                    title={
+                    <div>
+                        <div>
+                            Your Order
+                        </div>
+                        <div style={{marginTop: '3px'}}>
+                            {data.restaurant}
+                        </div>
+                        <div style={{fontSize: '12px'}}>
+                            {data.address} {data.city}
+                        </div>
+                    </div>
+                    }
+                    placement="right"
+                    closable={false}
+                    onClose={onClose}
+                    visible={cartVisible}
+                >
+                    <Cart items={items} editItem={editItem} removeItem={removeItem} />
+                </Drawer>
+                </Col>
+            </Row>
         </>
     )
 }
