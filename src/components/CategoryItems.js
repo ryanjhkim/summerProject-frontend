@@ -3,8 +3,7 @@ import { Card, Modal, InputNumber } from 'antd'
 import { Row, Col } from 'antd'
 import '../css/Category.css'
 
-const CategoryItems = (props) => {
-    const { menus, addItem } = props
+const CategoryItems = ({ menus, addItem }) => {
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [item, setItem] = useState([])
     const [qty, setQty] = useState(1)
@@ -23,9 +22,7 @@ const CategoryItems = (props) => {
         setItem([])
     }
 
-    const handleCancel = () => {
-        setIsModalVisible(false)
-    }
+    const handleCancel = () => setIsModalVisible(false)
 
     const onChange = (value) => {
         console.log(value)

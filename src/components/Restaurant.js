@@ -12,12 +12,8 @@ import '../css/Restaurant.css'
 const Restaurant = () => {
     const [items, setItems] = useState([])
     const [cartVisible, setCartVisible] = useState(false)
-    const showCart = () => {
-        setCartVisible(true);
-    };
-    const onClose = () => {
-        setCartVisible(false);
-    };
+    const showCart = () => setCartVisible(true)
+    const onClose = () => setCartVisible(false)
 
     const addItem = (item) => {
         console.log(item)
@@ -29,9 +25,7 @@ const Restaurant = () => {
         }
     }
 
-    const removeItem = (item) => {
-        setItems((items.filter(i => i.id !== item.id)))
-    }
+    const removeItem = (item) => setItems((items.filter(i => i.id !== item.id)))
 
     const editItem = (item, qty) => {
         console.log(qty)
