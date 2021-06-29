@@ -8,27 +8,33 @@ import LogIn from './pages/LogIn';
 import MainNavigation from './components/layout/MainNavigation';
 import HomePage from './pages/HomePage';
 
-// import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
+import { Layout } from 'antd';
 
+const { Header } = Layout;
 
 function App() {
   return (
     <div>
-      <MainNavigation />
-      <Switch>
-        <Route path='/' exact>
-          <HomePage /> {/* we are adding a component of AboutUs so that AboutUs component will be loaded by opening URL with /about-us. */}
-        </Route>
-        <Route path='/about-us'>
-          <AboutUs /> {/*we are adding a component of AboutUs so that AboutUs component will be loaded by opening URL with /about-us. */}
-        </Route>
-        <Route path='/sign-up'>
-          <SignUp />
-        </Route>
-        <Route path='/log-in'>
-          <LogIn />
-        </Route>
-      </Switch>
+      <Layout className='mainLayout'>
+      <Header>
+        <MainNavigation />
+        <Switch>
+          <Route path='/' exact>
+            <HomePage /> {/* we are adding a component of AboutUs so that AboutUs component will be loaded by opening URL with /about-us. */}
+          </Route>
+          <Route path='/about-us'>
+            <AboutUs /> {/*we are adding a component of AboutUs so that AboutUs component will be loaded by opening URL with /about-us. */}
+          </Route>
+          <Route path='/sign-up'>
+            <SignUp />
+          </Route>
+          <Route path='/log-in'>
+            <LogIn />
+          </Route>
+        </Switch>
+      </Header>
+      </Layout>
     </div>
   );
 }

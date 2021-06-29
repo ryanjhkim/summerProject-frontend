@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
+import { Menu } from 'antd';
 
-import classes from './MainNavigation.module.css'
+
 //we named it 'classes' because this will actually be a JavaScript object
 //where all the CSS classes you define in './AboutUsList.module.css' this CSS file,
 //will be properties of this object.
@@ -16,15 +18,21 @@ import classes from './MainNavigation.module.css'
 //but instead we will embed it in the content of our other code just as we did before. 
 //Totally unrelated to the router. 
 function MainNavigation() {
-    return <header className={classes.header}>
+    return (
+    <div className="container-fluid">
+    <header className="header">
 {/* header component which in the end will then wrap
 all the items that should go into this header.  */}
-        <div className={classes.logo}>
-            <Link to='/'>Yame</Link></div>
-        <nav>
-            <ul>
-                <li className={classes.AboutUs}>
-                    <Link to="/about-us">About Us</Link>
+        <div className="logo">
+            <Menu mode="horizontal" defaultSelectedKeys={['2']}>
+            <Menu.Item key="home"><Link to='/'>Yame!!</Link></Menu.Item>
+            <Menu.Item key="home"><Link to='/about-us'>About Us Page</Link></Menu.Item>
+            <Menu.Item key="home"><Link to='/sign-up'>Sign Up Page</Link></Menu.Item>
+            <Menu.Item key="home"><Link to='/log-in'>Log In Page</Link></Menu.Item>
+            
+            </Menu>
+        </div>
+        
 {/* instead of using <a href="...">, that whenever we click it,
 a new request will be sent to the server. which is redundant.*/}
 {/* So we use Link Component here instead. The Link component can be
@@ -36,16 +44,10 @@ load the appropriate component onto the screen just with React and JavaScript.
 So we stay on this already loaded page and and we don't send this extra request. */}
 {/* Then we can now use in App.js file by importing MainNavigation.js.
 and Add <MainNavigation> statement above the Switch statement.*/}
-                </li>
-                <li className={classes.signUp}>
-                    <Link to="/sign-up">Sign Up</Link>
-                </li>
-                <li className={classes.logIn}>
-                    <Link to="/log-in">Log In</Link>
-                </li>
-            </ul>
-        </nav>
+                
     </header>
+    </div>
+    )
 }
 
 export default MainNavigation;
