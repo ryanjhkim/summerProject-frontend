@@ -1,17 +1,35 @@
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
-import 'antd/dist/antd.css';
+
+// the job of the Route component is to define different paths in the URL we wanna listen to and which component should be loaded.
+import { Route, Switch } from 'react-router-dom';
+
+import AboutUs from './pages/AboutUs';
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
+import MainNavigation from './components/layout/MainNavigation';
+import HomePage from './pages/HomePage';
+
+// import 'antd/dist/antd.css';
 
 
-function App () {
+function App() {
   return (
-    <Router>
+    <div>
+      <MainNavigation />
       <Switch>
-        <Route exact path="/"><Home/></Route>
-        <Route path="/about"><About/></Route>
+        <Route path='/' exact>
+          <HomePage /> {/* we are adding a component of AboutUs so that AboutUs component will be loaded by opening URL with /about-us. */}
+        </Route>
+        <Route path='/about-us'>
+          <AboutUs /> {/*we are adding a component of AboutUs so that AboutUs component will be loaded by opening URL with /about-us. */}
+        </Route>
+        <Route path='/sign-up'>
+          <SignUp />
+        </Route>
+        <Route path='/log-in'>
+          <LogIn />
+        </Route>
       </Switch>
-    </Router>
+    </div>
   );
 }
 
