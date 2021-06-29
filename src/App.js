@@ -5,18 +5,19 @@ import { Route, Switch } from 'react-router-dom';
 import AboutUs from './pages/AboutUs';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
+import 'antd/dist/antd.css';
 import MainNavigation from './components/layout/MainNavigation';
 import HomePage from './pages/HomePage';
 
-import 'antd/dist/antd.css';
+
 import { Layout } from 'antd';
 
 const { Header } = Layout;
 
 function App() {
   return (
-    <div>
-      <Layout className='mainLayout'>
+    
+    <Layout className='mainLayout'>
       <Header>
         <MainNavigation />
         <Switch>
@@ -34,8 +35,8 @@ function App() {
           </Route>
         </Switch>
       </Header>
-      </Layout>
-    </div>
+    </Layout>
+    
   );
 }
 

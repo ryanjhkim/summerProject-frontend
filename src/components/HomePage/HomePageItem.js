@@ -1,4 +1,7 @@
 import classes from './HomePageItem.module.css';
+import { Button } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+import LoadingButton from '../Button/LoadingButton';
 
 function HomePageItem(props) {
     return (
@@ -11,9 +14,9 @@ function HomePageItem(props) {
                 <address>{props.address}</address>
                 <p>{props.address}</p>
             </div>
-            <div className={classes.actions}>
-                <button>To Favorites</button>
-            </div>
+
+                <LoadingButton/>
+            
         </li>
     );
 }

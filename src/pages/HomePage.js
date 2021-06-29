@@ -2,25 +2,25 @@ import HomePageList from '../components/HomePage/HomePageList';
 
 const DUMMY_DATA = [
     {
-        id: 'picture1',
-        title: 'This is a first picture',
+        id: '',
+        title: '',
         image: 'https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_view_Quaibr%C3%BCcke_20200702.jpg',
-        address: 'address of first picture',
-        description: 'description of first picture'
+        address: '',
+        description: ''
     },
     {
-        id: 'picture2',
-        title: 'This is a second picture',
+        id: '',
+        title: '',
         image: 'https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_view_Quaibr%C3%BCcke_20200702.jpg',
-        address: 'address of second picture',
-        description: 'description of second picture'
+        address: '',
+        description: ''
     },
     {
-        id: 'picture3',
-        title: 'This is a third picture',
+        id: '',
+        title: '',
         image: 'https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_view_Quaibr%C3%BCcke_20200702.jpg',
-        address: 'address of third picture',
-        description: 'description of third picture'
+        address: '',
+        description: ''
     }
 ];
 
