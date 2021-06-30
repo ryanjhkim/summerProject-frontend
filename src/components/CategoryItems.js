@@ -10,7 +10,6 @@ const CategoryItems = ({ menus, restaurantInfo, addItem }) => {
     const showModal = (item) => {
         setIsModalVisible(true)
         setItem(item)
-        console.log(item)
     }
 
     const handleOk = () => {
@@ -20,7 +19,6 @@ const CategoryItems = ({ menus, restaurantInfo, addItem }) => {
         item.restaurantName = restaurantInfo.name
         item.restaurantAddress = restaurantInfo.address
         item.restaurantCity = restaurantInfo.city
-        console.log(item)
         addItem(item)
         setItem([])
     }
@@ -28,7 +26,6 @@ const CategoryItems = ({ menus, restaurantInfo, addItem }) => {
     const handleCancel = () => setIsModalVisible(false)
 
     const onChange = (value) => {
-        console.log(value)
         setQty(value)
     }
 

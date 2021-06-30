@@ -9,7 +9,6 @@ const Cart = ({items, editItem, removeItem}) => {
 
     const showModal = (item) => {
         setIsModalVisible(true)
-        console.log(item)
         setItem(item)
     }
 
@@ -24,7 +23,6 @@ const Cart = ({items, editItem, removeItem}) => {
     }
 
     const onChange = (value) => {
-        console.log(value)
         setCount(value)
     }
 

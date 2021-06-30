@@ -25,7 +25,6 @@ const Restaurant = () => {
                 city: item.restaurantCity
             })
         } else {
-            console.log(item)
             const exist = items.find(i => i.id === item.id)
             if (exist) {
                 setItems(items.map(i => i.id === item.id ? {...exist, qty: exist.qty + item.qty } : i))
@@ -43,15 +42,12 @@ const Restaurant = () => {
     }
 
     const editItem = (item, qty) => {
-        console.log(qty)
         const exist = items.find(i => i.id === item.id)
         setItems(items.map(i => i.id === item.id ? {...exist, qty: qty} : i))
     }
 
     const categoryList = []
-    console.log(data.menu)
     for (const i in data.menu) {
-        console.log(data.menu[i])
         categoryList.push(data.menu[i].category)
     }
 
