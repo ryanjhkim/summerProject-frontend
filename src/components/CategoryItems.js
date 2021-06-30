@@ -36,7 +36,7 @@ const CategoryItems = ({ menus, restaurantInfo, addItem }) => {
         <Col className="menu-card" span={11} key={item.id}>
             <Card title={item.name} key={item.id} onClick={() => showModal(item)} hoverable={true}>
                 <p>
-                    Description
+                    {item.description}
                 </p>
                 <p>
                     ${item.price}
