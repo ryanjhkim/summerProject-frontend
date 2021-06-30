@@ -18,5 +18,9 @@ function HomePageList(props) {
     </ul>
     );
 }
+//by building this reusable component, this can be used in 
+//SignUp and LogIn. There we will have different data sources,
+//but the same way of displaying the data. That is what we can make work,
+//by adding a separate reusable component.
 
 export default HomePageList;

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Menu } from 'antd';
+import 'antd/dist/antd.css';
 
 
 //we named it 'classes' because this will actually be a JavaScript object

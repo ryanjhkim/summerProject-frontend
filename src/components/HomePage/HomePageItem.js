@@ -1,7 +1,6 @@
 import classes from './HomePageItem.module.css';
-import { Button } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
-import LoadingButton from '../Button/LoadingButton';
+import GooglePlaces from '../MapAPI/GooglePlaces';
+// import AddressButton from '../Button/AddressButton';
 
 function HomePageItem(props) {
     return (
@@ -13,10 +12,9 @@ function HomePageItem(props) {
                 <h3>{props.title}</h3>
                 <address>{props.address}</address>
                 <p>{props.address}</p>
+                <GooglePlaces /> 
             </div>
-
-                <LoadingButton/>
-            
+                   
         </li>
     );
 }
