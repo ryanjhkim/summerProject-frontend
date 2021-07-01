@@ -7,7 +7,7 @@ import PlacesAutocomplete, {
 
 function GooglePlaces() {
     const [address, setAddress] = React.useState("");
-  const [coordinates, setCoordinates] = React.useState({
+  const [, setCoordinates] = React.useState({
     lat: null,
     lng: null
   });
@@ -28,8 +28,7 @@ function GooglePlaces() {
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
-            <p>Latitude: {coordinates.lat}</p>
-            <p>Longitude: {coordinates.lng}</p>
+            
 
             <input {...getInputProps({ placeholder: "Type address" })} />
 
@@ -37,12 +36,12 @@ function GooglePlaces() {
               {loading ? <div>...loading</div> : null}
 
               {suggestions.map(suggestion => {
-                // const style = {
-                //   backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
-                // };
+                const style = {
+                  backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
+                };
 
                 return (
-                  <div {...getSuggestionItemProps(suggestion)}>
+                  <div {...getSuggestionItemProps(suggestion, { style })}>
                     {suggestion.description}
                   </div>
                 );

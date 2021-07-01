@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import Agreement from '../components/Agreement/Agreement';
 
 const { Option } = Select;
 const residences = [
@@ -281,7 +282,10 @@ const RegistrationForm = () => {
         {...tailFormItemLayout}
       >
         <Checkbox>
-          I have read the <a href="www.google.com">agreement</a>
+          <Agreement />
+          
+          {/* <a href="agreement">agreement</a> */}
+          {/* agreement 어떻게 다른 modal을 만들 수 있는지 */}
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
