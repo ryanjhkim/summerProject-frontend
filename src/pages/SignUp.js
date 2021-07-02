@@ -1,7 +1,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Form, Input, Select, Checkbox, Button } from 'antd';
+import { Form, Input, Select, Checkbox, Button, Space } from 'antd';
 // import { UserOutlined } from '@ant-design/icons';
+import Agreement from '../components/Agreement/Agreement';
 
 
 
@@ -52,24 +53,23 @@ const formItemLayout = {
             width: 70,
           }}
         >
+          <Option value="85">blank</Option>
           <Option value="86">+1</Option>
           <Option value="87">+82</Option>
+          
         </Select>
       </Form.Item>
     );
     
-  
-    
     return (
+        <div style={{display: "flex"}}>
+            <Space>
       <Form
         {...formItemLayout}
         form={form}
         name="register"
         onFinish={onFinish}
-        initialValues={{
-          residence: ['zhejiang', 'hangzhou', 'xihu'],
-          prefix: '86',
-        }}
+
         scrollToFirstError
       >
         <Form.Item
@@ -83,7 +83,7 @@ const formItemLayout = {
             },
           ]}
         >
-          <Input style={{ width: 300 }}/>
+          <Input/>
         </Form.Item>
         
         <Form.Item
@@ -97,7 +97,7 @@ const formItemLayout = {
             },
           ]}
         >
-          <Input style={{ width: 300 }}/>
+          <Input />
         </Form.Item>
   
         <Form.Item
@@ -114,7 +114,7 @@ const formItemLayout = {
             },
           ]}
         >
-          <Input style={{ width: 300 }}/>
+          <Input />
         </Form.Item>
   
         <Form.Item
@@ -129,7 +129,7 @@ const formItemLayout = {
             },
           ]}
         >
-          <Input style={{ width: 300 }}/>
+          <Input />
         </Form.Item>
   
         <Form.Item
@@ -143,7 +143,7 @@ const formItemLayout = {
           ]}
           hasFeedback
         >
-          <Input.Password style={{ width: 300 }}/>
+          <Input.Password />
         </Form.Item>
   
         <Form.Item
@@ -167,7 +167,7 @@ const formItemLayout = {
             }),
           ]}
         >
-          <Input.Password style={{ width: 300 }}/>
+          <Input.Password />
         </Form.Item>
   
         
@@ -224,7 +224,7 @@ const formItemLayout = {
           {...tailFormItemLayout}
         >
           <Checkbox>
-            I have read the <a href="agreement">agreement</a>
+            <Agreement />
           </Checkbox>
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
@@ -233,6 +233,8 @@ const formItemLayout = {
           </Button>
         </Form.Item>
       </Form>
+      </Space>
+      </div>
     );
   };
 
