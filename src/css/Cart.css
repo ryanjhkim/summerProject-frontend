@@ -1,0 +1,11 @@
+.cart-menu {
+    margin-top: 20px;
+}
+
+.cart-options {
+    display: flex;
+}
+
+.divider {
+    margin-top: 5px;
+}
