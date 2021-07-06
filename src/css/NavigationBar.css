@@ -1,0 +1,34 @@
+.menu-item {
+    display: block;
+    transition: display 0.1s;
+}
+
+.menu-item:hover {
+    display: none;
+}
+
+.navbar-search {
+    top: 0;
+    left: 50%;
+    transform: translateX(0);
+    width: 600px;
+    height: 44px;
+    opacity: 0;
+    display: none;    
+    transition: 0.5s;
+}
+
+
+.navbar-search-active {
+    display: block;
+    transition-delay: 0.4s;
+    transform: translateX(-50%);
+}
+
+.navbar-search-btn {
+    visibility: visible;
+}
+
+.navbar-search-btn-hidden {
+    visibility: hidden;
+}
