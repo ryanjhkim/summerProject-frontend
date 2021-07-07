@@ -1,9 +1,10 @@
-import { Menu, Button, Row, Col, Input, Divider } from "antd"
+import { Menu, Button, Row, Col, Input } from "antd"
 import { MenuOutlined, ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons'
 import { useState } from "react"
 import AddressModal from "./AddressModal"
 import logo from '../images/logo.png'
 import '../css/NavigationBar.css'
+import '../css/style.less'
 
 // addresses[0] will be the default address
 const GlobalNavigationBar = ({addresses}) => {
@@ -40,16 +41,14 @@ const GlobalNavigationBar = ({addresses}) => {
                     </Menu>
                     </Col>
                     <Col>
-                        <Menu>
+                        <Menu mode="horizontal" selectable={false}>
+                            <div className="menu-item-no-highlight">
                             <Menu.Item>
                                 <Input 
                                     prefix={<SearchOutlined/>}
-                                    onClick={handleSearchClick}
                                     className={isSearchClicked ? "navbar-search-active": "navbar-search"}
                                     placeholder="Enter restaurants" 
                                 />
-                            </Menu.Item>
-                            <Menu.Item>
                                 <Button 
                                     type="text" 
                                     icon={<SearchOutlined style={{fontSize: 24}}/>} 
@@ -57,12 +56,13 @@ const GlobalNavigationBar = ({addresses}) => {
                                     onClick={handleSearchClick}
                                 />
                             </Menu.Item>
-                        <Menu.Item>
-                        <Button 
-                            type="text" 
-                            icon={<ShoppingCartOutlined style={{fontSize: 24}}/>} 
-                        />
-                        </Menu.Item>
+                            </div>
+                            <Menu.Item>
+                                <Button 
+                                    type="text" 
+                                    icon={<ShoppingCartOutlined style={{fontSize: 24}}/>} 
+                                />
+                            </Menu.Item>
                         </Menu>
                     </Col>
                 </Row>
@@ -74,40 +74,5 @@ const GlobalNavigationBar = ({addresses}) => {
         </>
     )
 }
-/*
-        <> 
-            <Menu mode="horizontal" style={{display: "flex", justifyContent: "space-between"}}>
-                <div style={{flex: 1, display: "flex", justifyContent: "flex-start", alignItems: "center"}}>
-                <Menu.Item ><MenuOutlined /></Menu.Item>
-                <Menu.Item >Deliver to 
-                    <Button type="text" 
-                    style={{color: "#1890FF"}}
-                    onClick={showAddressModal}
-                    >
-                        {activeAddress}
-                    </Button>
-                </Menu.Item>
-                </div>
-                <div style={{display: "flex", justifyContent: "center", flex: 1}}>
-                    <Menu.Item ><img src={logo} alt="Yame logo" width="45" height="45" /></Menu.Item>
-                </div>
-                <div style={{display: "flex", justifyContent: "flex-end", flex: 1}}>
-                    <Menu.Item>
-                        <Search></Search>
-                    </Menu.Item>
-                    <Menu.Item>
-                        <Button 
-                            type="text" 
-                            icon={<ShoppingCartOutlined style={{fontSize: 24}}/>} 
-                        />   
-                    </Menu.Item>
-                </div>
-            </Menu>
-            <AddressModal
-                addresses={addresses} 
-                isVisible={isAddressModalVisible} 
-                setVisibility={setAddressVisibility} 
-            />
-        </>
-*/
+
 export default GlobalNavigationBar

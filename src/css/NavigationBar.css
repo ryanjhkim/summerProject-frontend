@@ -1,29 +1,21 @@
-.menu-item {
-    display: block;
-    transition: display 0.1s;
-}
-
-.menu-item:hover {
-    display: none;
-}
-
 .navbar-search {
     top: 0;
-    left: 50%;
+    left: 25%;
     transform: translateX(0);
     width: 600px;
     height: 44px;
     opacity: 0;
-    display: none;    
+    visibility: hidden;  
     transition: 0.5s;
 }
 
-
 .navbar-search-active {
-    display: block;
+    visibility: visible;
     transition-delay: 0.4s;
-    transform: translateX(-50%);
+    transform: translateX(-25%);
 }
+
+
 
 .navbar-search-btn {
     visibility: visible;
