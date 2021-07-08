@@ -1,23 +1,16 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Input, Space } from 'antd';
 
-const { Search } = Input;
+import GooglePlaces from '../MapAPI/GooglePlaces';
+// import { Button, Tooltip } from 'antd';
+// import { SearchOutlined } from '@ant-design/icons';
 
-const onSearch = value => console.log(value);
 
 function AddressButton() {
   return (
-    <Space direction="vertical">
-    <Search
-      placeholder="Enther Your Address"
-      allowClear
-      enterButton="Search"
-      size="large"
-      onSearch={onSearch}
-    />
-    
-  </Space>
+    <div>
+    <GooglePlaces />
+    </div>
   );
 }
 

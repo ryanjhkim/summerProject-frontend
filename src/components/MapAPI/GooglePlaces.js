@@ -3,7 +3,9 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng
 } from "react-places-autocomplete";
-
+import { Row, Col, Button } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+// import classes from './GooglePlaces.module.css';
 
 function GooglePlaces() {
     const [address, setAddress] = React.useState("");
@@ -19,8 +21,19 @@ function GooglePlaces() {
     setCoordinates(latLng);
   };
 
+  // state ={
+  //   size: 'large',};
+
+  // handleSizeChange = e => {
+  //   this.setState({size: e.target.value});
+  // }
+  
+  // const {size} = this.state;
+
   return (
     <div>
+      <Row> 
+      <Col span={12}>
       <PlacesAutocomplete
         value={address}
         onChange={setAddress}
@@ -30,7 +43,7 @@ function GooglePlaces() {
           <div>
             
 
-            <input {...getInputProps({ placeholder: "Type address" })} />
+            <input size='50'{...getInputProps({ placeholder: "Enter your address" })} />
 
             <div>
               {loading ? <div>...loading</div> : null}
@@ -50,6 +63,13 @@ function GooglePlaces() {
           </div>
         )}
       </PlacesAutocomplete>
+      </Col>
+      
+        <Col span={1}>
+      <Button type="primary" shape="round" icon={<SearchOutlined />} 
+      size={'large'}>Search</Button>
+      </Col>
+      </Row>
     </div>
   );
 }

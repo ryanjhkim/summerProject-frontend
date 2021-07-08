@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import 'antd/dist/antd.css';
-import { Form, Input, Select, Checkbox, Button, Space } from 'antd';
+import { Row, Col, Form, Input, Select, Checkbox, Button, Space } from 'antd';
 // import { UserOutlined } from '@ant-design/icons';
 import Agreement from '../components/Agreement/Agreement';
+// import style from './SignUp.css';
 
 
 
@@ -40,6 +41,8 @@ const formItemLayout = {
   };
   
   const RegistrationForm = () => {
+    const [check, handleCheck] = useState(false);
+
     const [form] = Form.useForm();
   
     const onFinish = (values) => {
@@ -62,6 +65,8 @@ const formItemLayout = {
     );
     
     return (
+      <Row>
+        <Col span={8} offset={8}>
         <div style={{display: "flex"}}>
             <Space>
       <Form
@@ -223,9 +228,14 @@ const formItemLayout = {
           ]}
           {...tailFormItemLayout}
         >
-          <Checkbox>
-            <Agreement />
+          <Col offset={1}>
+          <Checkbox checked={check} onChange={handleCheck}>
+            <Col offset={1}>
+          <Agreement handleCheck={handleCheck}/>
+          </Col>
           </Checkbox>
+          
+          </Col>
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
@@ -235,6 +245,8 @@ const formItemLayout = {
       </Form>
       </Space>
       </div>
+      </Col>
+      </Row>
     );
   };
 
