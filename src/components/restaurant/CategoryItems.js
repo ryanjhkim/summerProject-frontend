@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Row, Col, Card, Modal, InputNumber } from 'antd'
-import '../css/Category.css'
+import '../../css/Category.css'
 
 const CategoryItems = ({ menus, restaurantInfo, addItem }) => {
     const [isModalVisible, setIsModalVisible] = useState(false)

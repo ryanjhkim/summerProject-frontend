@@ -1,6 +1,6 @@
 import { Button, Divider, Modal, InputNumber } from 'antd'
 import { useState } from 'react'
-import '../css/Cart.css'
+import '../../css/Cart.css'
 
 const Cart = ({items, editItem, removeItem}) => {
     const [isModalVisible, setIsModalVisible] = useState(false)

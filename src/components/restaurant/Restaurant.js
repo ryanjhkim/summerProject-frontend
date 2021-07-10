@@ -4,8 +4,8 @@ import { Row, Col, Drawer, Badge, Affix, PageHeader } from 'antd';
 import Cart from './Cart'
 import CategoryContainer from './CategoryContainer'
 import CatNavBar from './CatNavBar'
-import data from '../data/data.json'
-import '../css/Restaurant.css'
+import data from '../../data/data.json'
+import '../../css/Restaurant.css'
 
 
 const Restaurant = () => {

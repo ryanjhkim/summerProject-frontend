@@ -31,3 +31,7 @@
 .ant-carousel .slick-next:focus {
     color: black !important;
 }
+
+.downoutlined {
+    padding-top: 5px !important;
+}

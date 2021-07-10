@@ -1,6 +1,6 @@
 import { Carousel } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import '../css/RestaurantPage.css'
+import '../../css/RestaurantPage.css'
 
 const CategoryMenu = ({ categoryList, filterByCategory }) => {
 
@@ -30,13 +30,13 @@ const CategoryMenu = ({ categoryList, filterByCategory }) => {
     return (
         <Carousel className="carousel" dots={false} arrows prevArrow={<LeftOutlined />} nextArrow={<RightOutlined />}>
           <div>
-            <div class="contentStyle" style={{justifyContent: list1.length == 10 ? 'space-around' : 'flex-start'}}>
+            <div class="contentStyle" style={{justifyContent: list1.length === 10 ? 'space-around' : 'flex-start'}}>
                 {categories1}
             </div>
           </div>
           {list2.length > 0 &&
           <div>
-            <div class="contentStyle" style={{justifyContent: list2.length == 10 ? 'space-around' : 'flex-start'}}>
+            <div class="contentStyle" style={{justifyContent: list2.length === 10 ? 'space-around' : 'flex-start'}}>
               {categories2}
             </div>
           </div>} 

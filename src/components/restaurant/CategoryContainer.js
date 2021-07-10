@@ -1,5 +1,5 @@
 import CategoryItems from './CategoryItems'
-import '../css/Category.css'
+import '../../css/Category.css'
 
 const CategoryContainer = ({menu, restaurantInfo, addItem}) => {
 

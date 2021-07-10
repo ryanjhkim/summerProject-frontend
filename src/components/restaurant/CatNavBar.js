@@ -1,6 +1,6 @@
 import { Menu } from 'antd'
 import { Link } from 'react-scroll'
-import '../css/Category.css'
+import '../../css/Category.css'
 
 const CatNavBar = ({ categoryList }) => {
     const categories = categoryList.map(item => 
