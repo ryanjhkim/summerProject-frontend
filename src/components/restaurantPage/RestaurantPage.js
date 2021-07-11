@@ -2,7 +2,7 @@ import { useState } from 'react'
 import CategoryMenu from './CategoryMenu'
 import { Row, Col, Button, Dropdown, Slider, Card } from 'antd'
 import { DownOutlined, StarFilled } from '@ant-design/icons';
-import data from '../../data/restaurantPageData.json'
+import data from '../../data/RestaurantPageData.json'
 import RestaurantCardContainer from './RestaurantCardContainer'
 
 

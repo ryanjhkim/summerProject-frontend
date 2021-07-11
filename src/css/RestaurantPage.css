@@ -35,3 +35,7 @@
 .downoutlined {
     padding-top: 5px !important;
 }
+
+.closed {
+    opacity: 0.33;
+}
