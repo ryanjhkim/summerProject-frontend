@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import { Row, Col, Form, Input, Select, Checkbox, Button, Space } from 'antd';
 // import { UserOutlined } from '@ant-design/icons';
 import Agreement from '../components/Agreement/Agreement';
-// import style from './SignUp.css';
+import './SignUp.css';
 
 
 
@@ -65,9 +65,10 @@ const formItemLayout = {
     );
     
     return (
-      <Row>
-        <Col span={8} offset={8}>
-        <div style={{display: "flex"}}>
+      
+      <Row >
+        <Col span={20} offset={8}>
+        <div style={{display: "flex"}} className='margin'>
             <Space>
       <Form
         {...formItemLayout}
@@ -247,6 +248,7 @@ const formItemLayout = {
       </div>
       </Col>
       </Row>
+      
     );
   };
 

@@ -5,7 +5,7 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 import { Row, Col, Button } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-// import classes from './GooglePlaces.module.css';
+import './GooglePlaces.module.css';
 
 function GooglePlaces() {
     const [address, setAddress] = React.useState("");
@@ -40,7 +40,7 @@ function GooglePlaces() {
         onSelect={handleSelect}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
+          <div className='moveBox'>
             
 
             <input size='50'{...getInputProps({ placeholder: "Enter your address" })} />
