@@ -40,10 +40,9 @@ function GooglePlaces() {
         onSelect={handleSelect}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div className='moveBox'>
-            
+          <div>
 
-            <input size='50'{...getInputProps({ placeholder: "Enter your address" })} />
+            <input className="autocomplete-dropdown-container" size='50'{...getInputProps({ placeholder: "Enter your address" })} />
 
             <div>
               {loading ? <div>...loading</div> : null}

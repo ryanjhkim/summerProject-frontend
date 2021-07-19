@@ -1,3 +1,8 @@
 moveBox{
     margin-top: 40px;
 }
+
+.autocomplete-dropdown-container{
+    position: "absolute";
+    z-index: 1000;
+ }
